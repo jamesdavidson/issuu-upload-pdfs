@@ -1,0 +1,9 @@
+First, we have a hash of data.
+
+We also have an ISSUU key and secret.
+
+We take the hash, sort it and generate a params string.
+
+We then generate a signature and add it to the params string.
+
+We then prepend the url and go!
