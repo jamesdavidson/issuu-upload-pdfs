@@ -11,13 +11,13 @@ my $xs = XML::Simple->new;
 my $ua = LWP::UserAgent->new;
 my $issuu_url = 'http://api.issuu.com/1_0';
 
-my @pdfs = ("pdf1.pdf","pdf2.pdf");
+my @pdfs = ("1938_Annual.pdf");
 foreach my $pdf_to_do (@pdfs) {
   my %issuu_params = (
-    apiKey           => 'api key',
+    apiKey           => $ENV{'ISSUU_API_KEY'},
     action           => 'issuu.document.url_upload',
-    slurpUrl         => 'http://www.yourdomain.com/pdfs/'.$pdf_to_do,
-    name             => $pdf_to_do,
+    slurpUrl         => 'https://my.url.com/pdfs/'.$pdf_to_do,
+    name             => "1938annual",
     title            => 'title',
     tags             => 'tags',
     commentsAllowed  => 'false',
@@ -31,7 +31,7 @@ foreach my $pdf_to_do (@pdfs) {
     ratingsAllowed   => 'false',
     format           => 'xml',
   );
-  my $sig_string = 'api secret';
+  my $sig_string = $ENV{'ISSUU_API_SECRET'};
   foreach my $isu (sort keys %issuu_params) {
     $sig_string .= $isu . $issuu_params{$isu};
   }
