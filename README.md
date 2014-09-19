@@ -1,16 +1,14 @@
-WORK IN PROGRESS
+### Usage
+
+ISSUU_API_KEY=asdf ISSUU_API_SECRET=qwert ./issuu.document.url_upload.pl < list_of_urls
 
 ### Wrangling the Issuu.com API
 
 The API is a bit weird. It has some funny HTTP quirks.
 
-This repository includes code based on a script published by Chris Faust.
-
 The documentation is ok but not great.
 
-### Usage
-
-cat list_of_urls | ./issuu.document.url_upload.pl ISSUU_API_KEY=asdf ISSUU_API_SECRET=qwert
+This repository includes code based on a script published by Chris Faust.
 
 ### References
 
